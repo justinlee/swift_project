@@ -26,9 +26,7 @@ extension UIAlertController {
                             tapBlock: @escaping UIAlertControllerCompletionBlock) -> Void {
         
 
-        let strongController = UIAlertController(title:alert_title, message: alert_message, preferredStyle : style)
-        
-        let controller : UIAlertController  = strongController;
+        let controller = UIAlertController(title:alert_title, message: alert_message, preferredStyle : style)
         
         if (cancelButtonTitle != "") {
             
