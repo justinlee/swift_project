@@ -2,8 +2,8 @@
 //  JHAlertView.swift
 //  SwiftTest
 //
-//  Created by 이재훈 on 16/09/2017.
-//  Copyright © 2017 이재훈. All rights reserved.
+//  Created by meteoswarm on 16/09/2017.
+//  Copyright © 2017 meteoswarm. All rights reserved.
 //
 
 import UIKit
