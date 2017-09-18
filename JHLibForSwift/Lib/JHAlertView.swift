@@ -23,7 +23,7 @@ extension UIAlertController {
                             cancelButtonTitle : String,
                             destructiveButtonTitle : String?,
                             otherButtonTitles : NSArray?,
-                            tapBlock: @escaping UIAlertControllerCompletionBlock) -> Void {
+                            completionBlock: @escaping UIAlertControllerCompletionBlock) -> Void {
         
 
         let controller = UIAlertController(title:alert_title, message: alert_message, preferredStyle : style)
@@ -31,14 +31,14 @@ extension UIAlertController {
         if (cancelButtonTitle != "") {
             
             let cancelAction: UIAlertAction = UIAlertAction(title: cancelButtonTitle, style: .cancel) { action -> Void in
-                    tapBlock(controller, action, UIAlertControllerBlocksCancelButtonIndex)
+                    completionBlock(controller, action, UIAlertControllerBlocksCancelButtonIndex)
             }
             controller.addAction(cancelAction)
         }
         
         if destructiveButtonTitle != nil {
             let destructiveAction: UIAlertAction = UIAlertAction(title: destructiveButtonTitle, style: .destructive) { action -> Void in
-                tapBlock(controller, action, UIAlertControllerBlocksDestructiveButtonIndex)
+                completionBlock(controller, action, UIAlertControllerBlocksDestructiveButtonIndex)
             }
 
             controller.addAction(destructiveAction)
@@ -46,7 +46,7 @@ extension UIAlertController {
         if otherButtonTitles != nil{
             for (index, otherButtonTitle) in (otherButtonTitles?.enumerated())! {
                 let otherAction: UIAlertAction = UIAlertAction(title: otherButtonTitle as? String, style: .default, handler: { (action: UIAlertAction) in
-                    tapBlock(controller, action, UIAlertControllerBlocksFirstOtherButtonIndex+index)
+                    completionBlock(controller, action, UIAlertControllerBlocksFirstOtherButtonIndex+index)
                 })
                 controller.addAction(otherAction)
             }
