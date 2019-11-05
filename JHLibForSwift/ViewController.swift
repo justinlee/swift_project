@@ -14,6 +14,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIAlertController.show(target: self, alert_title: "Title Test", alert_message: "Test Message", style: UIAlertControllerStyle.alert, cancelButtonTitle: "Cancel", destructiveButtonTitle: "OK", otherButtonTitles: nil) { (alert, action, number) in
+            NSLog("Alert Done")
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
